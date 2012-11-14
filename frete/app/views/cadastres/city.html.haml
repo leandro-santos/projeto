@@ -1,0 +1,20 @@
+= form_tag(:method => "get") do
+  #content
+    .left.column
+      %h3 Cadastros
+      = button_to( 'Transportadora', {:action => "index"} )
+      = button_to( 'Cidade', {:action => "index"} )
+      = button_to( 'Valo/Cid./Transp', {:action => "index"}  )
+    .right.column
+      %br
+      %br
+      %h3 Cidade
+      = label_tag(:name,"Nome")
+      = text_field_tag(:name)
+      = button_to( 'Buscar', {:action => "index"}  )
+      = label_tag(:state,"Estado")
+      = text_field_tag(:state)
+      %br
+      = button_to( 'Novo', {:action => "index"}  )
+      = button_to( 'Editar', {:action => "index"}  )
+      = button_to( 'Excluir', {:action => "index"}  )

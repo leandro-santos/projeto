@@ -1,0 +1,31 @@
+= form_tag(:method => "get") do
+  #content
+    .left.column
+      = image_tag("http://www.showeb.com.br/imagens/transportadoras.jpg", :border => 0, :width => 300, :height =>300)
+    .right.column
+      %h1 Transportadora
+      %br
+      %h3 Rua: tal de tal   N 999
+      %h3 Bairro: Centro  Cidade: Clementina
+      %h3 Site: www.transportadora.com.br
+      %h3 Fone (18) 3333-3333 E-mail teste@teste.com.br
+    .down.column
+      %h1 Peso / Valor
+      %table{:width=>"500px", :border=>"1px"}
+        %thead
+          %tr
+            %th Peso (KG)
+            %th Valor (R$)
+        %tbody
+          %tr
+            %td
+              1 a 20
+            %td
+              23,30
+          %tr
+            %td
+              21 a 30
+            %td
+              28,60
+      %h1 Localização (Maps)
+      = image_tag("http://www.wmonline.com.br/files/Image/artigos/google-maps-empresa/maps-google-pontos.gif", :border => 0, :width => 300, :height =>300)

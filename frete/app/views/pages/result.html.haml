@@ -1,0 +1,31 @@
+= form_tag(:method => "get") do
+  #content
+    .left.column
+      %h2 Ordem
+      %input{:type => "radio", :name => "radio_order", :id => "radio_carrer", :value => "salesforce", :checked => true}
+      %br/
+      %input{:type => "radio", :name => "radio_order", :id => "radio_highest", :value => "salesforce", }
+      %br/
+      %input{:type => "radio", :name => "radio_order", :id => "radio_lowest", :value => "salesforce", }
+    .right.column
+      %h2 Tabela
+      %table{:width=>"500px", :border=>"1px"}
+        %tbody
+          %tr
+            %td
+              = image_tag("http://www.encontrasp.com.br/imgs/empresas/%7BFE1BCAA4-542E-4C29-A4C1-A6AF3ADB9E3B%7D_tucano-uchoa.jpg", :border => 0, :width => 120, :height => 100)
+            %td
+              %h2 Transportadora
+              Rua: tal de tal   N 999
+              %br
+              Bairro: Centro  City: Clementina
+              %br
+              Site: www.transportadora.com.br
+              %br
+              Fone (18) 3333-3333 E-mail teste@teste.com.br
+            %td
+              %h2 Valor:
+              %br
+              %h3 R$ 100,00
+              %br
+              mais
