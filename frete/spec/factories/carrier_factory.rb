@@ -1,8 +1,8 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :carrier do
-    name { Faker::Lorem.paragraph }
+  factory :carrier, class: 'Carrier' do
+    name { Faker::Name.name }
     address { Faker::Name.name }
     city { Faker::Address.city }
     zip_code { Faker::Address.zip_code }
