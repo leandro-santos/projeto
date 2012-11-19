@@ -33,8 +33,14 @@ ActiveRecord::Schema.define(:version => 20121118142226) do
   end
 
   create_table "value_freight_carriers", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "id_carrier"
+    t.integer  "id_origin_city"
+    t.integer  "id_destination_city"
+    t.integer  "beginning_band"
+    t.integer  "end_band"
+    t.float    "value"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
 end
