@@ -1,10 +1,12 @@
-= form_tag(:method => "get") do
-  = label_tag(:city_origin, "Cidade de origem:")
-  = text_field_tag(:city_origin)
+= form_tag(:method => "post") do
+  = label_tag(params[:city_origin], "Cidade de origem:")
+  = text_field_tag(params[:city_origin])
   %br
-  = label_tag(:city_destination, "Cidade de destino")
-  = text_field_tag(:city_destination)
+  = label_tag(params[:city_destination], "Cidade de destino")
+  = text_field_tag(params[:city_destination])
   %br
-  = label_tag(:weight, "Peso")
-  = text_field_tag(:weight)
-  = link_to("Buscar","/search")
+  = label_tag(params[:weight], "Peso")
+  = text_field_tag(params[:weight])
+  = link_to("Buscar","pages/result")
+  %br
+  = text_field_tag :search, params[:search]

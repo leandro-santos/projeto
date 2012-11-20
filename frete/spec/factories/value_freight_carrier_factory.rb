@@ -1,12 +1,12 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :value_freight_carriers, class: 'ValueFreightCarriers' do
-    id_carrier { Faker::Array.rand }
-    id_origin_city { Faker::Array.rand }
-    id_destination_city { Faker::Array.rand }
-    beginning_band { Faker::Array.rand }
-    end_band { Faker::Array.rand }
-    value { Faker::Name.name }
+  factory :value_freight_carrier, class: 'ValueFreightCarrier' do
+    id_carrier { 1 }
+    id_origin_city { 1 }
+    id_destination_city { 1 }
+    beginning_band { 1 }
+    end_band { 1 }
+    value { 1 }
   end
 end

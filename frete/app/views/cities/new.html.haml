@@ -1,4 +1,4 @@
-= form_tag(:method => "get") do
+= form_for(@city) do |f|
   #content
     .left.column
       %h3 Cadastros
@@ -9,12 +9,12 @@
       %br
       %br
       %h3 Cidade
-      = label_tag(:name,"Nome")
-      = text_field_tag(:name)
+      = f.label(:name,"Nome")
+      = f.text_field(:name)
       = button_to( 'Buscar', {:action => "index"}  )
-      = label_tag(:state,"Estado")
-      = text_field_tag(:state)
+      = f.label(:city,"Estado")
+      = f.text_field(:city)
       %br
-      = button_to( 'Novo', {:action => "index"}  )
+      = f.submit
       = button_to( 'Editar', {:action => "index"}  )
       = button_to( 'Excluir', {:action => "index"}  )
