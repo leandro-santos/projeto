@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20121118142226) do
   create_table "carriers", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "city"
+    t.integer  "city_id"
     t.string   "zip_code"
     t.string   "site"
     t.string   "phone"
@@ -27,17 +27,17 @@ ActiveRecord::Schema.define(:version => 20121118142226) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
-    t.string   "city"
+    t.string   "state"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "value_freight_carriers", :force => true do |t|
-    t.integer  "id_carrier"
-    t.integer  "id_origin_city"
-    t.integer  "id_destination_city"
-    t.integer  "beginning_band"
-    t.integer  "end_band"
+  create_table "freights", :force => true do |t|
+    t.integer  "carrier_id"
+    t.integer  "origin_city_id"
+    t.integer  "destination_city_id"
+    t.integer  "start_weight"
+    t.integer  "end_weight"
     t.float    "value"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false

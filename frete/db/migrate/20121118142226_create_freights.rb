@@ -1,6 +1,6 @@
-class CreateValueFreightCarriers < ActiveRecord::Migration
+class CreateFreights < ActiveRecord::Migration
   def change
-    create_table :value_freight_carriers do |t|
+    create_table :freights do |t|
       t.references :carrier
       t.references :origin_city
       t.references :destination_city

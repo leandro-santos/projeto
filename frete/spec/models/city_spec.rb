@@ -11,7 +11,7 @@ describe City do
   end
 
   it 'should have name' do
-    FactoryGirl.build(:city, city: nil).should_not be_valid
+    FactoryGirl.build(:city, state: nil).should_not be_valid
   end
 
 end

@@ -1,6 +1,6 @@
-class ValueFreightCarrier < ActiveRecord::Base
-  attr_accessible :id_carrier, :id_origin_city, :id_destination_city, :beginning_band, :end_band, :value
-  validates :id_carrier, :id_origin_city, :id_destination_city, :beginning_band, :end_band, :value, :presence => true
+class Freight < ActiveRecord::Base
+  attr_accessible :carrier, :origin_city, :destination_city, :start_weight, :end_weight, :value
+  validates :carrier, :origin_city, :destination_city, :start_weight, :end_weight, :value, :presence => true
 
   class << self
     def search(origin_city, detination_city, weight)

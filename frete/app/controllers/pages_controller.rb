@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def result
     @data = params[:data]
-    @result = ValueFreightCarrier.search(@data[:city_origin],@data[:city_destination],@data[:weight])
+    @result = ValueFreightCarrier.search(@data[:origin_city],@data[:destination_city],@data[:weight])
     #render 'result'
   end
 end
