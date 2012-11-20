@@ -7,7 +7,7 @@ Frete::Application.routes.draw do
   get 'pages/index'
   get 'cities/index'
   get 'value_freight_carriers/index'
-  get 'pages/result'
+  post 'pages/result', as: :page_result
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
