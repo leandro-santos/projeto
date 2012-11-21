@@ -1,29 +1,31 @@
 class CarriersController < ApplicationController
+
+  #menu_item :carriers
+
   def index
+    @carriers = Carrier.all
   end
 
   def new
-    @carrier = Carrier.new
+    @carriers = Carries.new
+  end
+
+  def edit
+    @carriers = Carries.find(params[:id])
   end
 
   def create
-    @carrier = Carrier.new(params[:carrier])
-    if @carrier.save
-      flash[:notice] = 'Sucesso'
-      redirect_to new_carriers_path
-    else
-      render :new
-    end
+    @carriers = Carries.new(params[:carriers])
+    flash[:notice] = 'Transportadora cadastradas' if @carriers.save
   end
 
   def update
-    @carrier = Carrier.find(params[:id])
-    flash[:notice] = 'Sucesso'
+    @carriers = Carries.find(params[:id])
+    flash[:notice] = 'Transportadora alterada' if @carriers.update_attributes(params[:carriers])
   end
 
   def destroy
-    @carrier = Carrier.find(params[:id])
-    @carrier.destroy
+    @carriers = Carries.find(params[:id])
+    @carriers.destroy
   end
-
 end

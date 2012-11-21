@@ -1,0 +1,17 @@
+%h2
+  Transportadoras
+
+%ul class="list"
+  - @carriers.each do |carrier|
+    = content_tag_for :li, carrier, :class => cycle(:odd, :even) do
+      = link_to "#{carrier.full_name} (#{carrier.email})", [carrier]
+
+      .right
+        = link_to_edit [:edit, carrier]
+        = link_to_destroy [carrier] unless current_carrier == carrier
+
+%hr class="thick"
+
+.bar
+  .right
+    = link_to 'New carrier', new_carrier_path, :class => "button"

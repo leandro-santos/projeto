@@ -9,22 +9,19 @@
       %br
       %br
       %h3 Valor frete da transportadora
-      = f.label(:id_carrier,"Nome")
-      = f.text_field(:id_carrier)
-      = f.text_field(:id_carrier)
-      = button_to( 'Buscar', {:action => "index"}  )
-      = f.label(:id_origin_city,"Cidade origin")
-      = f.text_field(:id_origin_city)
-      = f.text_field(:id_origin_city)
-      = button_to( 'Buscar', {:action => "index"}  )
-      = f.label(:id_destination_city, "Cidade destino")
-      = f.text_field(:id_destination_city)
-      = f.text_field(:id_destination_city)
-      = button_to( 'Buscar', {:action => "index"}  )
-      = f.label(:beginning_band, "inicio")
-      = f.text_field(:beginning_band)
-      = f.label(:end_band, "final")
-      = f.text_field(:end_band)
+      = f.label(:carrier_id,"Transportadora")
+      = f.select :carrier_id, Carrier.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+      %br
+      = f.label(:origin_city_id,"Cidade origem")
+      = f.select :origin_city_id, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+      %br
+      = f.label(:destination_city_id, "Cidade destino")
+      = f.select :destination_city_id, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+      %br
+      = f.label(:start_weight, "Peso inicio")
+      = f.text_field(:start_weight)
+      = f.label(:end_weight, "Peso final")
+      = f.text_field(:end_weight)
       %br
       = f.label(:value, "Valor")
       = f.text_field(:value)

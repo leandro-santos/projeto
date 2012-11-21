@@ -15,8 +15,8 @@
       = f.label(:address,"Endereço")
       = f.text_field(:address)
       %br
-      = f.label(:city, "Cidade")
-      = f.text_field(:city)
+      = f.label(:city_id, "Cidade")
+      = f.select :city_id, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
       %br
       = f.label(:zip_code, "CEP")
       = f.text_field(:zip_code)

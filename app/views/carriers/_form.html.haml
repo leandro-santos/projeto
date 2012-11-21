@@ -1,0 +1,25 @@
+= form_for [@carrier] do |f|
+
+  = error_messages_for @carrier
+
+  %p
+    = f.text_field(:name, placeholder: "Nome")
+  %p
+    = f.text_field(:address, placeholder: "Endereço")
+  %p
+    = f.select :city_id, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+  %p
+    = f.text_field(:zip_code, placeholder: "CEP")
+  %p
+    = f.text_field(:site, placeholder: "Site")
+  %p
+    = f.text_field(:phone, placeholder: "Telefone")
+  %p
+    = f.text_field(:e_mail, placeholder: "E-Mail")
+
+  %hr class="thick"
+
+  %p
+    = f.submit :class => "button"
+    or
+    = link_to "cancel", admin_carriers_path
