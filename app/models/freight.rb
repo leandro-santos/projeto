@@ -1,8 +1,8 @@
 class Freight < ActiveRecord::Base
   attr_accessible :carrier_id, :origin_city_id, :destination_city_id, :start_weight, :end_weight, :value
   belongs_to :carrier
-  belongs_to :destination_city
-  belongs_to :origin_city
+  belongs_to :destination_city, :class_name => 'City'
+  belongs_to :origin_city, :class_name => 'City'
 
   validates  :carrier_id, :origin_city_id, :destination_city_id, :start_weight, :end_weight, :value, :presence => true
 

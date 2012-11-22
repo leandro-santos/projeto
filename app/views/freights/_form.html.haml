@@ -1,0 +1,21 @@
+= form_for(@freight) do |f|
+  = error_messages_for @freight
+  %p
+    = f.select :carrier_id, Carrier.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+  %p
+    = f.select :origin_city_id, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+  %p
+    = f.select :destination_city_id, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
+  %p
+    = f.text_field(:start_weight, placeholder: "Peso inicio")
+  %p
+    = f.text_field(:end_weight, placeholder: "Peso final")
+  %p
+    = f.text_field(:value, placeholder: "Valor")
+
+  %hr(class="thick")
+
+  %p
+    = f.submit('Salvar',:class => "button")
+    or
+    = link_to("Cancelar", freights_path)

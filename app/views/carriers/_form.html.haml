@@ -1,7 +1,5 @@
 = form_for [@carrier] do |f|
-
   = error_messages_for @carrier
-
   %p
     = f.text_field(:name, placeholder: "Nome")
   %p
@@ -17,9 +15,9 @@
   %p
     = f.text_field(:e_mail, placeholder: "E-Mail")
 
-  %hr class="thick"
+  %hr(class="thick")
 
   %p
-    = f.submit :class => "button"
+    = f.submit('salvar',:class => "button")
     or
-    = link_to "cancel", admin_carriers_path
+    = link_to 'cancelar', carriers_path
