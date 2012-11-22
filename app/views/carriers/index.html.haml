@@ -1,17 +1,18 @@
-%h2
-  Transportadoras
+.content
+  %h2
+    Transportadoras
 
-%ul(class="list")
-  - @carriers.each do |carrier|
-    = content_tag_for :li, carrier, :class => cycle(:odd, :even) do
-      = link_to "#{carrier.name} (#{carrier.e_mail})", [carrier]
+  %ul(class="list")
+    - @carriers.each do |carrier|
+      = content_tag_for :li, carrier, :class => cycle(:odd, :even) do
+        = link_to "#{carrier.name} (#{carrier.e_mail})", [carrier]
 
-      .right
-        = link_to_edit [:edit, carrier]
-        = link_to_destroy [carrier]
+        .right
+          = link_to_edit [:edit, carrier]
+          = link_to_destroy [carrier]
 
-%hr(class="thick")
+  %hr(class="thick")
 
-.bar
-  .right
-    = link_to('Nova', new_carrier_path, :class => "button")
+  .bar
+    .right
+      = link_to('Nova', new_carrier_path, :class => "button")

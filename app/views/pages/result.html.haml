@@ -1,44 +1,74 @@
-#content
-  .left.column
+
+.content_
+  .left
     %h2 Ordem
-    %input{:type => "radio", :name => "radio_order", :id => "radio_carrer", :value => "salesforce", :checked => true}
+    %input{:type => "radio", :name => "radio_order", :id => "radio_carrer", :value => "salesforce", :checked => true} teste
     %br/
-    %input{:type => "radio", :name => "radio_order", :id => "radio_highest", :value => "salesforce", }
+    %input{:type => "radio", :name => "radio_order", :id => "radio_highest", :value => "salesforce", } teste1
     %br/
-    %input{:type => "radio", :name => "radio_order", :id => "radio_lowest", :value => "salesforce", }
-  .right.column
+    %input{:type => "radio", :name => "radio_order", :id => "radio_lowest", :value => "salesforce", } teste2
+  .right
+    %ul(class="list")
+    - @freights.each do |freight|
+      = content_tag_for :dl, freight, class: cycle(:odd, :even) do
+        %td
+          %h3
+            = freight.carrier.name
+          %br
+          Endereço:
+          = freight.carrier.address
+          %br
+          Cidade:
+          - if freight.carrier.city.present?
+            = freight.carrier.city.name
+          %br
+          Site:
+          = freight.carrier.site
+          %br
+          Fone:
+          = freight.carrier.phone
+          %br
+          E-mail:
+          = freight.carrier.e_mail
+        %div.lest
+          %h2 Valor:
+          %br
+          %h3
+            R$
+            = freight.value
+          %br
+
     - if @freights.present?
       %h2 Tabela
-      %table{:width=>"500px", :border=>"1px"}
-        %tbody
-          %tr
-            - @freights.each do |freight|
-              %td
-                = image_tag("http://www.encontrasp.com.br/imgs/empresas/%7BFE1BCAA4-542E-4C29-A4C1-A6AF3ADB9E3B%7D_tucano-uchoa.jpg", :border => 0, :width => 120, :height => 100)
-              %td
-                %h3
-                  = freight.carrier.name
-                %br
-                Endereço:
-                = freight.carrier.address
-                %br
-                Cidade:
-                - if freight.carrier.city.present?
-                  = freight.carrier.city.name
-                %br
-                Site:
-                = freight.carrier.site
-                %br
-                Fone:
-                = freight.carrier.phone
-                %br
-                E-mail:
-                = freight.carrier.e_mail
-              %td
-                %h2 Valor:
-                %br
-                %h3
-                  R$
-                  = freight.value
-                %br
-                mais
+      %table(class="table_search")
+        - @freights.each do |freight|
+          %tr(class="table_search"){class: cycle(:odd, :even)}
+            %td
+              = image_tag("http://www.encontrasp.com.br/imgs/empresas/%7BFE1BCAA4-542E-4C29-A4C1-A6AF3ADB9E3B%7D_tucano-uchoa.jpg", :border => 0, :width => 120, :height => 100)
+            %td
+              %h3
+                = freight.carrier.name
+              %br
+              Endereço:
+              = freight.carrier.address
+              %br
+              Cidade:
+              - if freight.carrier.city.present?
+                = freight.carrier.city.name
+              %br
+              Site:
+              = freight.carrier.site
+              %br
+              Fone:
+              = freight.carrier.phone
+              %br
+              E-mail:
+              = freight.carrier.e_mail
+            %td
+              %h2 Valor:
+              %br
+              %h3
+                R$
+                = freight.value
+              %br
+              mais
