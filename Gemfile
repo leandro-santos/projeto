@@ -6,6 +6,7 @@ gem 'jquery-rails', '2.1.3'
 gem 'paperclip', '3.3.1'
 gem 'friendly_id', '4.0.9'
 gem 'rspec-rails', '2.12.0', group: [:test, :development]
+gem "will_paginate", '3.0.3'
 
 group :assets do
   gem 'sass-rails', '3.2.3'

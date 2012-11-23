@@ -8,6 +8,7 @@ Frete::Application.routes.draw do
   get 'cities/index'
   get 'freights/index'
   post 'pages/result', as: :page_result
+  get 'pages/result'
   resources :carriers, :except => [:show]
   resources :freights, :except => [:show]
   # The priority is based upon order of creation:

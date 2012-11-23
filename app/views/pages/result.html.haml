@@ -8,67 +8,32 @@
     %br/
     %input{:type => "radio", :name => "radio_order", :id => "radio_lowest", :value => "salesforce", } teste2
   .right
-    %ul(class="list")
-    - @freights.each do |freight|
-      = content_tag_for :dl, freight, class: cycle(:odd, :even) do
-        %td
-          %h3
-            = freight.carrier.name
-          %br
-          Endereço:
-          = freight.carrier.address
-          %br
-          Cidade:
-          - if freight.carrier.city.present?
-            = freight.carrier.city.name
-          %br
-          Site:
-          = freight.carrier.site
-          %br
-          Fone:
-          = freight.carrier.phone
-          %br
-          E-mail:
-          = freight.carrier.e_mail
-        %div.lest
-          %h2 Valor:
-          %br
-          %h3
-            R$
-            = freight.value
-          %br
-
     - if @freights.present?
-      %h2 Tabela
       %table(class="table_search")
         - @freights.each do |freight|
-          %tr(class="table_search"){class: cycle(:odd, :even)}
+          = content_tag_for :tr, freight, class: cycle(:odd, :even) do
             %td
-              = image_tag("http://www.encontrasp.com.br/imgs/empresas/%7BFE1BCAA4-542E-4C29-A4C1-A6AF3ADB9E3B%7D_tucano-uchoa.jpg", :border => 0, :width => 120, :height => 100)
-            %td
-              %h3
-                = freight.carrier.name
-              %br
-              Endereço:
-              = freight.carrier.address
-              %br
-              Cidade:
-              - if freight.carrier.city.present?
-                = freight.carrier.city.name
-              %br
-              Site:
-              = freight.carrier.site
-              %br
-              Fone:
-              = freight.carrier.phone
-              %br
-              E-mail:
-              = freight.carrier.e_mail
-            %td
-              %h2 Valor:
-              %br
-              %h3
-                R$
-                = freight.value
-              %br
-              mais
+              .table_search_data.left
+                %h2
+                  = freight.carrier.name
+                %br
+                Endereço:
+                = freight.carrier.address
+                %br
+                Cidade:
+                - if freight.carrier.city.present?
+                  = freight.carrier.city.name
+                CEP:
+                = freight.carrier.zip_code
+                Fone:
+                = freight.carrier.phone
+                %br
+                Site:
+                = freight.carrier.site
+                E-mail:
+                = freight.carrier.e_mail
+              .table_search_value.left
+                %h2 Valor
+                %h3
+                  = number_to_currency(freight.value, :unit => "R$ ", :separator => ",", :delimiter => ".")
+      = will_paginate @freights, :params=>{:data=>@data}

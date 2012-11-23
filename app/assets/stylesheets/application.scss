@@ -73,12 +73,10 @@ div#show {
   background: #E4E4E4;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  margin: 10px auto;
+  margin: 0px auto;
   width: 1000px;
   overflow: auto;
 }
-
-h1 { font-size: 42px; }
 
 input, select { line-height: 20px; }
 
@@ -91,9 +89,90 @@ label {
   color: #fff;
 }
 
+/* pagination */
+
+.pagination {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.pagination a, .pagination span, .pagination em {
+  padding: .3em .5em;
+  display: block;
+  float: left;
+  margin-right: 3px;
+
+  text-shadow: 1px 1px 1px #FFF;
+  border: 1px solid #cccccc;
+  position: relative;
+  cursor: pointer;
+  color: #666;
+  background-image: -moz-linear-gradient(center top, #f0f0f0, #d9d9d9);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0f0f0), to(#d9d9d9));
+  -pie-background: linear-gradient(center top, #f0f0f0, #d9d9d9);
+
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-weight: bold;
+
+  behavior: url(/javascripts/vendor/PIE.htc);
+}
+
+.pagination span.disabled {
+  color: #929292;
+  border: 1px solid #DDD;
+  background:none;
+}
+
+.pagination em {
+  color: #FFF;
+  text-shadow: 1px 1px 1px #0082AF;
+  border: 1px solid #0082AF;
+  background-image: -moz-linear-gradient(center top, #00B2D2, #0082AF);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00B2D2), to(#0082AF));
+  -pie-background: linear-gradient(center top, #00B2D2, #0082AF);
+  behavior: url(/javascripts/vendor/PIE.htc);
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #666;
+  border: 1px solid #DDD;
+}
+
+.pagination a:hover, .pagination a:focus {
+  background-image: -moz-linear-gradient(center top, #d9d9d9, #f0f0f0);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9d9d9), to(#f0f0f0));
+  -pie-background: linear-gradient(center top, #d9d9d9, #f0f0f0);
+  behavior: url(/javascripts/vendor/PIE.htc);
+}
+.pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
 .table_search {
   width: 800px;
-  border: 0;
+}
+
+.table_search_data {
+  height: 110px;
+  margin: 4px  ;
+  text-align: left;
+  width: 580px;
+  overflow: auto;
+}
+
+.table_search_value {
+  height: 50px;
+  margin: 31px 4px;
+  text-align: center;
+  vertical-align: center;
+  width: 180px;
 }
 
 textarea, input[type="text"], input[type="password"], select {

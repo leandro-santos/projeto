@@ -1,3 +1,6 @@
+require 'will_paginate/array'
+require "will_paginate/version"
+
 class PagesController < ApplicationController
   def index
 
@@ -5,7 +8,7 @@ class PagesController < ApplicationController
 
   def result
     @data = params[:data]
-    @freights = search_type(@data[:origin_city],@data[:destination_city],@data[:weight])
+    @freights = search_type(@data[:origin_city],@data[:destination_city],@data[:weight]).paginate(:page => params[:page], per_page: 3)
   end
 
   private
