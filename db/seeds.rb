@@ -25,3 +25,15 @@ module BRPopulate
 end
 
 BRPopulate.populate
+
+
+module CarrierPopulate
+  def self.populate
+    (0..3).each do |i|
+      Carrier.create(name:"Trasportadora#{i}", address:"Rua: Teste#{i}", city: City.first, zip_code:'16.250-000', site:'www.transportadora.com.br', phone:'(99) 9999-9999', e_mail:'transportadora@yahoo.com')
+      Carrier.create(name:"Trasportadora#{i+3}", address:"Rua: Teste#{i+3}", city: City.first, zip_code:'16.250-000', site:'www.transportadora.com.br', phone:'(99) 9999-9999', e_mail:'transportadora@yahoo.com')
+    end
+  end
+end
+
+CarrierPopulate.populate

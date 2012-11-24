@@ -1,11 +1,10 @@
 Frete::Application.routes.draw do
   root to: 'pages#index'
 
-  resource :cities, :pages
+  resource :pages
 
   get 'carriers/index'
   get 'pages/index'
-  get 'cities/index'
   get 'freights/index'
   post 'pages/result', as: :page_result
   get 'pages/result'
