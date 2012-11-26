@@ -5,10 +5,10 @@
         %h1 Frete Fácil
       %ul(class="main_search")
         = f.label(:origin_city, "Cidade de origem   :")
-        = f.text_field(:origin_city)
+        = f.select :origin_city, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
         %br
         = f.label(:destination_city, "Cidade de destino:")
-        = f.text_field(:destination_city)
+        = f.select :destination_city, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
         %br
         = f.label(:weight, "Peso:")
         = f.text_field(:weight)
