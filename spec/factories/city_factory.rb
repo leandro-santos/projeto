@@ -1,8 +1,9 @@
+#encoding: utf-8
 require 'factory_girl'
 
 FactoryGirl.define do
   factory :city do
     name { Faker::Address.city }
-    city { 1 }
+    state { "São Paulo" }
   end
 end

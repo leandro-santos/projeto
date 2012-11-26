@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :carrier, class: 'Carrier' do
     name { Faker::Name.name }
     address { Faker::Address.name }
-    city { 1 }
-    zip_code { Faker::Address.zip_code }
+    city { City.first }
+    zip_code { "16.250-000" }
     site { Faker::Internet.domain_word }
     phone { Faker::Name.name }
     e_mail { Faker::PhoneNumber.phone_number }

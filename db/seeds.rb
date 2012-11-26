@@ -26,7 +26,6 @@ end
 
 BRPopulate.populate
 
-
 module CarrierPopulate
   def self.populate
     (0..3).each do |i|
@@ -37,3 +36,26 @@ module CarrierPopulate
 end
 
 CarrierPopulate.populate
+
+module FreightPopulate
+  def self.populate
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '1', end_weight: '10', value: '23')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '1', end_weight: '10', value: '21')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '11', end_weight: '20', value: '35')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '11', end_weight: '20', value: '38')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '21', end_weight: '30', value: '42')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '21', end_weight: '30', value: '44')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '31', end_weight: '40', value: '50')
+    Freight.create(carrier_id: Carrier.find(1).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '31', end_weight: '40', value: '51')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '1', end_weight: '10', value: '27')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '1', end_weight: '10', value: '24')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '11', end_weight: '20', value: '34')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '11', end_weight: '20', value: '33')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '21', end_weight: '30', value: '47')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '21', end_weight: '30', value: '44')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(1).id, destination_city_id: City.find(3).id, start_weight: '31', end_weight: '40', value: '57')
+    Freight.create(carrier_id: Carrier.find(2).id, origin_city_id: City.find(2).id, destination_city_id: City.find(4).id, start_weight: '31', end_weight: '40', value: '54')
+  end
+end
+
+FreightPopulate.populate
