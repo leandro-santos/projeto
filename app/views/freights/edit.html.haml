@@ -1,4 +1,9 @@
-%h2
-  Editar frete
+.top_bar
+  = link_to('Home', root_path, class: "button")
+  = link_to('Transportadora', carriers_path, class: "button")
+  = link_to('Frete', freights_path, class: "button")
+.content_
+  %h2
+    Editar frete
 
 = render 'form'

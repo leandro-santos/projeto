@@ -1,7 +1,5 @@
 class FreightsController < ApplicationController
 
-  #menu_item :freights
-
   def index
     @freights = Freight.all
   end
@@ -19,6 +17,8 @@ class FreightsController < ApplicationController
     if @freight.save
       flash[:notice] = 'Frete cadastrado'
       redirect_to new_freight_path
+    else
+      render :action => 'new'
     end
   end
 
@@ -27,6 +27,8 @@ class FreightsController < ApplicationController
     if @freight.update_attributes(params[:freight])
       flash[:notice] = 'Frete alterado'
       redirect_to freights_path
+    else
+      render :action => 'edit'
     end
   end
 

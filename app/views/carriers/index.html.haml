@@ -1,11 +1,16 @@
-.content
-  %h2
-    Transportadoras
-
+.top_bar
+  = link_to('Home', root_path, class: "button")
+  = link_to('Transportadora', carriers_path, class: "button")
+  = link_to('Frete', freights_path, class: "button")
+.content_
+  .content
+    %h2
+      Transportadoras
+.content_
   %ul(class="list")
     - @carriers.each do |carrier|
       = content_tag_for :li, carrier, :class => cycle(:odd, :even) do
-        = link_to "#{carrier.name} (#{carrier.e_mail})", [carrier]
+        = "#{carrier.name} (#{carrier.e_mail})"
 
         .right
           = link_to_edit [:edit, carrier]
@@ -14,5 +19,4 @@
   %hr(class="thick")
 
   .bar
-    .right
-      = link_to('Nova', new_carrier_path, :class => "button")
+    = link_to('Nova Transportadora', new_carrier_path, :class => "button")

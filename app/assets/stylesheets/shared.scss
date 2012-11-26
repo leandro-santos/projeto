@@ -48,6 +48,11 @@ ul.squared-horizontal li {
 /* flash messages */
 .flash_message{
   position: relative;
+  background: #009900;
+  font-family: arial, san-serif;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 1px auto;
 }
 
 .flash_message .close{

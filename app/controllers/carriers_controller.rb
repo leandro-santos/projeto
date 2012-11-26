@@ -19,6 +19,8 @@ class CarriersController < ApplicationController
     if @carrier.save
       flash[:notice] = 'Transportadora cadastrada'
       redirect_to new_carrier_path
+    else
+      render :action => 'new'
     end
   end
 
@@ -27,6 +29,8 @@ class CarriersController < ApplicationController
     if @carrier.update_attributes(params[:carrier])
       flash[:notice] = 'Transportadora alterada'
       redirect_to carriers_path
+    else
+      render :action => 'edit'
     end
   end
 

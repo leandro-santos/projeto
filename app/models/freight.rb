@@ -18,6 +18,9 @@ class Freight < ActiveRecord::Base
     where(origin_city_id: origin_city).where(destination_city_id: detination_city).
     where('((? >= start_weight AND ? <= end_weight) OR ? = -1)', weight, weight, weight)
   }
+  scope :search_table, lambda{ |weight|
+    where('((? >= start_weight AND ? <= end_weight) OR ? = -1)', weight, weight, weight)
+  }
 
   def self.search_type(origin_city, detination_city, weight)
     if weight.blank?
@@ -31,6 +34,8 @@ class Freight < ActiveRecord::Base
       result = Freight.search_by_destination_city(detination_city, weight)
     when origin_city.present? && detination_city.present?
       result = Freight.search_all(origin_city, detination_city, weight)
+    else
+      result = Freight.search_table(weight)
     end
 
     return result

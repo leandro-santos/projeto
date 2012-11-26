@@ -1,21 +1,25 @@
-%h2
-  Frete
+.top_bar
+  = link_to('Home', root_path, class: "button")
+  = link_to('Transportadora', carriers_path, class: "button")
+  = link_to('Frete', freights_path, class: "button")
+.content_
+  %h2
+    Frete
+.content_
+  %ul(class="list")
+    - @freights.each do |freight|
+      - if @freights.present?
+        = content_tag_for :li, freight, :class => cycle(:odd, :even) do
+          = link_to "#{freight.carrier.name}", [freight]
+          %br
+          = "Cidades: #{freight.origin_city.name} X #{freight.destination_city.name}"
+          %br
+          = "Peso inicial: #{freight.start_weight}Kg  X Peso final: #{freight.end_weight}Kg"
+          .right
+            = link_to_edit [:edit, freight]
+            = link_to_destroy [freight]
 
-%ul(class="list")
-  - @freights.each do |freight|
-    - if @freights.present?
-      = content_tag_for :li, freight, :class => cycle(:odd, :even) do
-        = link_to "#{freight.carrier.name}", [freight]
-        %br
-        = "Cidades: #{freight.origin_city.name} X #{freight.destination_city.name}"
-        %br
-        = "Peso inicial: #{freight.start_weight}Kg  X Peso final: #{freight.end_weight}Kg"
-        .right
-          = link_to_edit [:edit, freight]
-          = link_to_destroy [freight]
+  %hr(class="thick")
 
-%hr(class="thick")
-
-.bar
-  .right
+  .bar
     = link_to('Novo frete', new_freight_path, class: "button")
