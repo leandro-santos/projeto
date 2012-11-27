@@ -118,8 +118,6 @@ label {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   font-weight: bold;
-
-  behavior: url(/javascripts/vendor/PIE.htc);
 }
 
 .pagination span.disabled {
@@ -135,7 +133,6 @@ label {
   background-image: -moz-linear-gradient(center top, #00B2D2, #0082AF);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00B2D2), to(#0082AF));
   -pie-background: linear-gradient(center top, #00B2D2, #0082AF);
-  behavior: url(/javascripts/vendor/PIE.htc);
 }
 
 .pagination a {
@@ -148,7 +145,6 @@ label {
   background-image: -moz-linear-gradient(center top, #d9d9d9, #f0f0f0);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9d9d9), to(#f0f0f0));
   -pie-background: linear-gradient(center top, #d9d9d9, #f0f0f0);
-  behavior: url(/javascripts/vendor/PIE.htc);
 }
 .pagination:after {
   content: ".";
@@ -186,7 +182,6 @@ textarea, input[type="text"], input[type="password"], select {
   border-width: 1px;
   border-color: #CCC;
   font-size: 15px;
-  behavior: url(/javascripts/vendor/PIE.htc);
 }
 
 textarea, input, select {
@@ -222,7 +217,6 @@ ul.list li.header{
   background-image: -moz-linear-gradient(center top, #FDFDFD, #ECECEC);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#ECECEC));
   -pie-background: linear-gradient(center top, #FDFDFD, #ECECEC);
-  behavior: url(/javascripts/vendor/PIE.htc);
 }
 
 ul.main_freight {

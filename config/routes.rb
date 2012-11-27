@@ -1,11 +1,7 @@
 Frete::Application.routes.draw do
   root to: 'pages#index'
 
-  resource :pages
-
-  get 'carriers/index'
-  get 'pages/index'
-  get 'freights/index'
+  get 'pages/more/:id' => 'pages#more', as: :freight_profile
   post 'pages/result', as: :page_result
   get 'pages/result'
   resources :carriers, :except => [:show]

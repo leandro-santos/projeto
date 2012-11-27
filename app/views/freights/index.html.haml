@@ -10,7 +10,7 @@
     - @freights.each do |freight|
       - if @freights.present?
         = content_tag_for :li, freight, :class => cycle(:odd, :even) do
-          = link_to "#{freight.carrier.name}", [freight]
+          = "#{freight.carrier.name}"
           %br
           = "Cidades: #{freight.origin_city.name} X #{freight.destination_city.name}"
           %br
