@@ -1,22 +1,16 @@
-.top_bar
-  = link_to('Home', root_path, class: "button")
-  = link_to('Transportadora', carriers_path, class: "button")
-  = link_to('Frete', freights_path, class: "button")
-.content_
-  .content
+#carrier_index
+  .show
     %h2
       Transportadoras
-.content_
-  %ul(class="list")
-    - @carriers.each do |carrier|
-      = content_tag_for :li, carrier, :class => cycle(:odd, :even) do
-        = "#{carrier.name} (#{carrier.e_mail})"
+    %table(class="table")
+      - @carriers.each do |carrier|
+        = content_tag_for :tr, carrier, :class => cycle(:odd, :even) do
+          %td.content
+            .right
+            = "#{carrier.name} (#{carrier.e_mail})"
+            .right
+              = link_to_edit [:edit, carrier]
+              = link_to_destroy [carrier]
 
-        .right
-          = link_to_edit [:edit, carrier]
-          = link_to_destroy [carrier]
-
-  %hr(class="thick")
-
-  .bar
-    = link_to('Nova transportadora', new_carrier_path, :class => "button")
+    %hr
+    = link_to('Nova transportadora', new_carrier_path, class: "button")

@@ -1,43 +1,39 @@
-.top_bar
-  = link_to('Home', root_path, class: "button")
-  = link_to('Transportadora', carriers_path, class: "button")
-  = link_to('Frete', freights_path, class: "button")
-.content_
-  %h1
-    Informações
-.content_
-  .left.column
-    = image_tag("http://www.showeb.com.br/imagens/transportadoras.jpg", :border => 0, :width => 300, :height =>300)
-  .right.column
-    %h1
-      = @freight.carrier.name
-    %br
-    %h3
-      = @freight.carrier.address
-    %h3
-      = @freight.carrier.city.name
-    %h3
-      = @freight.carrier.zip_code
-    %h3
-      = @freight.carrier.phone
-    %h3
-      = @freight.carrier.e_mail
-    %h3
-      = @freight.carrier.site
-  .down.column
-    %h1 Peso / Valor
-    %table
-      %thead
-        %tr
-          %th Peso (KG)
-          %th Valor (R$)
-      %tbody
-        = content_tag_for :tr, @freights do |freight|
-          %td
-            = freight.start_weight
-            a
-            = freight.end_weight
-          %td
-            = number_to_currency(freight.value, unit: "", separator: ",", delimiter: ".")
-    %h1 Localização (Maps)
-    = image_tag("http://www.wmonline.com.br/files/Image/artigos/google-maps-empresa/maps-google-pontos.gif", :border => 0, :width => 300, :height =>300)
+#page_more
+  .show
+    .image
+      = image_tag("http://www.showeb.com.br/imagens/transportadoras.jpg", :border => 0, :width => 300, :height =>300)
+    .data
+      %h1
+        = @freight.carrier.name
+      %br
+      %h3
+        = @freight.carrier.address
+      %h3
+        = @freight.carrier.city.name
+      %h3
+        = @freight.carrier.zip_code
+      %h3
+        = @freight.carrier.phone
+      %h3
+        = @freight.carrier.e_mail
+      %h3
+        = @freight.carrier.site
+    .down
+      .values
+        %h1 Peso / Valor
+        %table
+          %thead
+            %tr
+              %th Peso (KG)
+              %th Valor (R$)
+          %tbody
+            = content_tag_for :tr, @freights do |freight|
+              %td
+                = freight.start_weight
+                a
+                = freight.end_weight
+              %td
+                = number_to_currency(freight.value, unit: "", separator: ",", delimiter: ".")
+      .location
+        %h1 Localização (Maps)
+        = image_tag("http://www.wmonline.com.br/files/Image/artigos/google-maps-empresa/maps-google-pontos.gif", :border => 0, :width => 300, :height =>300)

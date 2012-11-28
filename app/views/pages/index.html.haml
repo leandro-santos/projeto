@@ -1,13 +1,7 @@
-.top_bar
-  = link_to('Home', root_path, class: "button")
-  = link_to('Transportadora', carriers_path, class: "button")
-  = link_to('Frete', freights_path, class: "button")
-= form_for :data, url: page_result_path do |f|
-  %div(id='wrapper')
-    %div(id='show')
-      %ul(class="main_freight")
-        %h1(id='logo') Frete Fácil
-      %ul(class="main_search")
+#page_index
+  = form_for :data, url: page_result_path do |f|
+    .show
+      .search
         = f.label(:origin_city, "Cidade de origem   :")
         = f.select :origin_city, City.all.collect {|c| [ c.name, c.id ]}, prompt: '-- selecione --'
         %br

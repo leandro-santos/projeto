@@ -5,6 +5,17 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Nunito'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Fredoka+One'
   %body
-    = flash_messages
+    .top_bar
+      .logo
+        %h1 Frete fácil
+    .menu
+      .link_bar
+        = link_to('Home', root_path, class: "link")
+        = link_to('Transportadora', carriers_path, class: "link")
+        = link_to('Frete', freights_path, class: "link")
+    .show
+      = flash_messages
     = yield
