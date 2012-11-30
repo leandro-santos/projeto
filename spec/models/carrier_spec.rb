@@ -15,7 +15,7 @@ describe Carrier do
   end
 
   it 'don not need a city' do
-    FactoryGirl.build(:carrier, city: nil).should be_valid
+    FactoryGirl.build(:carrier, city_id: nil).should be_valid
   end
 
   it 'don not need a zip_code' do

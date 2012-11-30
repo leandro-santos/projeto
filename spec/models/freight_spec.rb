@@ -7,15 +7,15 @@ it 'should have a valid generator' do
   end
 
   it 'should have carrier' do
-    FactoryGirl.build(:freight, carrier: nil).should_not be_valid
+    FactoryGirl.build(:freight, carrier_id: nil).should_not be_valid
   end
 
   it 'should have origin_city' do
-    FactoryGirl.build(:freight, origin_city: nil).should_not be_valid
+    FactoryGirl.build(:freight, origin_city_id: nil).should_not be_valid
   end
 
   it 'should have destination_city' do
-    FactoryGirl.build(:freight, destination_city: nil).should_not be_valid
+    FactoryGirl.build(:freight, destination_city_id: nil).should_not be_valid
   end
 
   it 'should have start_weight' do

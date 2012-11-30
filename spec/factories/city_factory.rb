@@ -2,7 +2,7 @@
 require 'factory_girl'
 
 FactoryGirl.define do
-  factory :city do
+  factory :city, class: 'City'  do
     name { Faker::Address.city }
     state { "São Paulo" }
   end

@@ -1,6 +1,6 @@
 Frete::Application.routes.draw do
   root to: 'pages#index'
-
+  get 'pages/index'
   get 'pages/more/:id' => 'pages#more', as: :freight_profile
   post 'pages/result', as: :page_result
   get 'pages/result'
